@@ -1,0 +1,43 @@
+[package]
+name = "nnrpc"
+version = "4.0.0-dev"
+authors = ["Parity Technologies <admin@parity.io>"]
+edition = "2021"
+license = "Apache-2.0"
+homepage = "https://substrate.io"
+repository = "https://github.com/paritytech/substrate/"
+description = "RPC interface for the transaction payment pallet."
+readme = "README.md"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+inline-python = "0.10.0"
+pyo3 = "0.17"
+codec = { package = "parity-scale-codec", version = "3.2.2" }
+jsonrpsee = { version = "0.16.2", features = ["client-core", "server", "macros"] }
+sp-api = { git = "https://github.com/paritytech/substrate", "branch" = "polkadot-v0.9.37" } 
+sp-blockchain = { git = "https://github.com/paritytech/substrate", "branch" = "polkadot-v0.9.37" }
+sp-core = { git = "https://github.com/paritytech/substrate", "branch" = "polkadot-v0.9.37" }
+sp-rpc = { git = "https://github.com/paritytech/substrate", "branch" = "polkadot-v0.9.37" }
+sp-runtime = { git = "https://github.com/paritytech/substrate", "branch" = "polkadot-v0.9.37" }
+sp-weights = { git = "https://github.com/paritytech/substrate", "branch" = "polkadot-v0.9.37" }
+#fast_gpt2 = { version = "0.1.0", git = "https://github.com/Narsil/fast_gpt2" }
+
+#fast_gpt2 = { version = "0.1.0", path = "../pallets/testzk/data/tmp2/fast_gpt2" }
+#tokenizers = { git = "https://github.com/huggingface/tokenizers", branch="main", default-features=false, features=["onig"] }
+
+#plonky2 = { version = "0.1.1", default-features = false }
+plonky2 = { path = "../plonky2" }
+plonky2_maybe_rayon = { version = "0.1.0", default-features = false }
+anyhow = { version = "1.0.40", default-features = false }
+ieee754 = "0.2.6"
+rand = "0.8.5"
+bzip2 = "0.4.4"
+tokio = { version = "1.23.0", features = ["rt-multi-thread", "macros"] }
+#once_cell = "1.17.1"
+
+memmap2 = "0.5"
+#safetensors = { git = "https://github.com/huggingface/safetensors", branch="forcing_alignment" }
+safetensors = { path = "../f5ef88d/safetensors" }
